@@ -1,4 +1,5 @@
 import React from 'react';
+import MyPosts from './Posts/MyPosts/MyPosts';
 import classes from './Profile.module.css';
 
 const Profile = () => {
@@ -6,9 +7,7 @@ const Profile = () => {
         <div>
             <img className={classes.contentFoto} src="https://focus.ua/storage/pub/images/2017/2615387.jpg" alt="" /></div>
             <div>Avatar + description</div>
-            <div>My posts</div>
-            <div>New post</div>
-            <div>Post 1</div>         
+            <MyPosts/>        
         </div>);
  
 }
