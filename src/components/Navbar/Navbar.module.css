@@ -1,7 +1,12 @@
 .navbar {
     grid-area: navbar;
     background-color: rgb(86, 139, 218);
+    padding: 20px;
   }
   .navbar a {
     text-decoration: none;
+    color: floralwhite;
+  }
+  .navbar a.active{
+    color: fuchsia;
   }
