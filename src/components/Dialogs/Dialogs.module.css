@@ -3,7 +3,7 @@
     grid-template-columns: 4fr 8fr;
     padding: 10px;
     grid-gap: 10px;
-    background-color: #fff;
+    
 }
 
 
@@ -11,24 +11,31 @@
     /* border: 1px solid #161616; */
     height: 100%;
     width: 100%;
+    border-right:1px solid #b9babb;
     
 
 }
 .memberCard {
     text-decoration: none;
-    border: 1px solid #b9babb;
-    width: 90%;
+    border-bottom:1px solid #b9babb;
+    width: 91%;
     height: 50px;
-    background: rgb(226, 225, 225);
+    /* background: rgb(226, 225, 225); */
     display: flex;
     align-items: center;
     color: gray;
     padding: 15px;
-    margin-bottom: 10px;
+    /* margin-bottom: 5px; */
+    transition: background-color 0.2 easy;
 }
 .memberCard:active {
     text-decoration: none;
     color: gray;
+}
+.memberCard:hover {
+    text-decoration: none;
+    background: rgb(230, 228, 228);
+    
 }
 .memberImg {
     width: 40px;
