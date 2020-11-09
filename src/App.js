@@ -6,15 +6,18 @@ import Header from './components/Header/Header';
 import Navbar from './components/Navbar/Navbar';
 import Profile from './components/Profile/Profile';
 
-function App() {
+function App(props) {
+
+  
+
   return (
     <BrowserRouter>
       <div className="app">
         <Header/>
         <Navbar/>
         <div className="app-content">
-          <Route path='/dialogs' component={Dialogs}/>
-          <Route path='/profile' component={Profile}/>
+          <Route path='/dialogs' render = { ()=> <Dialogs dialogsData={props.dialogsData} messageData={props.messageData} /> } />
+          <Route path='/profile' render = { ()=>  <Profile postData={props.postData} /> } />
                  
         </div>
       
