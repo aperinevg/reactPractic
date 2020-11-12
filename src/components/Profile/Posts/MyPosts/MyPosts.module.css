@@ -1,3 +1,7 @@
 .posts {
     background-color: dodgerblue;
 }
+.addPost{
+    display: flex;
+    align-items: center;
+}
