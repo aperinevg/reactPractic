@@ -1,11 +1,14 @@
 import { rerenderEntairTree } from "../render";
 
+
+
 let state = {
     profilePage: {
         postData: [
             {id:'1', message: 'This is my first post'},
             {id:'2', message: 'Hello, how are you?'}
           ],
+        newPostText: '',
     },
     dialogsPage: {
         dialogsData: [
@@ -26,15 +29,19 @@ let state = {
      
 };
 
+export const updatePostText = (newPostText) => {
+    state.profilePage.newPostText = newPostText;
+    rerenderEntairTree(state);
+}
 
-export const addPost = (postMessage) => {
+export const addPost = () => {
     
-
     let newPost = {
         id: 5,
-        message: postMessage, 
+        message: state.profilePage.newPostText, 
     }
     state.profilePage.postData.push(newPost);
+    state.profilePage.newPostText='';
     rerenderEntairTree(state);
 };
 export default state;

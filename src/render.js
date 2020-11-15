@@ -4,12 +4,12 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-import {addPost} from './redux/redux';
+import {addPost, updatePostText} from './redux/redux';
 
  export const rerenderEntairTree = (state) => {
   ReactDOM.render(
     <React.StrictMode>
-      <App state ={state} addPost = {addPost} />
+      <App state ={state} addPost = {addPost} updatePostText={updatePostText} />
     </React.StrictMode>,
     document.getElementById('root')
   );
