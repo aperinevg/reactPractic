@@ -5,6 +5,7 @@ import classes from './MyPosts.module.css';
 
 
 const MyPosts = (props) => {
+   
     
     let posts = props.postData.map(post => <Post message={post.message} /> );
 
@@ -13,10 +14,12 @@ const MyPosts = (props) => {
     let newPostElem = React.createRef();
 
     const addPost = () => {
+        
         props.addPost();
     };
 
     const onPostChange =() => {
+        
         let text = newPostElem.current.value;
         props.updatePostText(text);
     };
