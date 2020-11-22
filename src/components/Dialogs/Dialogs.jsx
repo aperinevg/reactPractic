@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { addMessageActionCreater, updateMessageActionCreater } from '../../redux/redux';
+import { addMessageActionCreater, updateMessageActionCreater } from '../../redux/dialogPageReducer';
 import DialogItem from './DialogItem/DialogItem';
 import classes from './Dialogs.module.css';
 import Message from './Message/Message';
