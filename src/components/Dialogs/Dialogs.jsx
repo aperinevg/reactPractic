@@ -1,6 +1,5 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { addMessageActionCreater, updateMessageActionCreater } from '../../redux/dialogPageReducer';
 import DialogItem from './DialogItem/DialogItem';
 import classes from './Dialogs.module.css';
 import Message from './Message/Message';
@@ -18,15 +17,14 @@ const Dialogs = (props) => {
     let newMessageElem = React.createRef();
 
 
-    const addMessage = () => {
-        let action = addMessageActionCreater();
-        props.dispatch(action);
+    const onAddMessage = () => {       
+        props.addMessage();
     };
 
     const onMessageChange = () => {
         let text = newMessageElem.current.value;
-        let action = updateMessageActionCreater(text);
-        props.dispatch(action);
+        props.updateMessage(text);
+       
     };
 
      return (
@@ -38,7 +36,7 @@ const Dialogs = (props) => {
                {messages}
                 <div className={classes.addMessage}>
                     <textarea ref={newMessageElem} onChange={onMessageChange} value={props.state.newMessageText} />
-                    <button onClick ={ addMessage } className={classes.addMessageButton}>send</button>
+                    <button onClick ={ onAddMessage } className={classes.addMessageButton}>send</button>
                 </div>
             </div>
             
