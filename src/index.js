@@ -4,6 +4,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import StoreContext from './StoreContext';
 
 
 
@@ -11,9 +12,11 @@ import App from './App';
 const rerenderEntairTree = (state) => {
   
   ReactDOM.render(
-    <React.StrictMode>
-      <App state = {state} store={store}  />
-    </React.StrictMode>,
+    <StoreContext.Provider value={store}>
+      <React.StrictMode>
+        <App  />
+      </React.StrictMode>
+    </StoreContext.Provider>,
     document.getElementById('root')
   );
 
